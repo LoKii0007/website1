@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact us{% endblock title %}
+
+{% block css %}
+<style>
+
+body{
+    background:whitesmoke;
+}
+
+.google-map{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-top:20px;
+  padding-bottom:30px;
+}
+
+.visit{
+  margin: 3rem;
+}
+
+.visit h1{
+  font-size: 2rem;
+}
+
+@media (max-width:576px){
+.visit{
+  margin: .8rem;
+}
+.visit h1{
+font-size: 1.3rem;
+}
+.google-map{
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+}
+</style>
+{% endblock css %}
+
+
+{% block body %}
+
+<div class="container productline-1">
+    <div class="text-center font-weight-bold visit ">
+      <h1>VISIT US</h1>
+    </div>
+  
+    <div class="google-map align-items-center">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.2784842223277!2d77.0255993754532!3d28.50126797573673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19edefffb9c5%3A0xe8ab971c5099bc44!2sRao%20Builders!5e0!3m2!1sen!2sin!4v1689145940623!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+{% endblock body %}
+
+{% block js %}
+
+<script>
+
+
+
+</script>
+
+{% endblock js %}

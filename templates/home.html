@@ -1,0 +1,402 @@
+{% extends 'base.html' %}
+
+{% block title %}home{% endblock title %}
+
+{% block homeActive %}active{% endblock homeActive %}
+
+{% block css %}
+
+<style>
+
+.nav-item a:hover{
+  color: rgb(255, 255, 255);
+
+}
+
+.home{
+  background: whitesmoke;
+  padding-top:20px;
+  padding-bottom:30px
+}
+
+.hometext h1{
+  margin-bottom: 0%;
+  font-size:60px;
+  font-family:'kanit', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hometext{
+  animation: hometext-load 300ms ease-in-out;
+}
+
+.homeimg{
+  background-image: url("./media/home/images/image1.jpg");
+  height: 500px;
+  width: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: homeimg-load 300ms ease-in-out;
+}
+
+.container{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.card{
+  border-radius: 10px;
+  transition: .3s ease-in-out;
+}
+
+.card:hover{
+  transform: scale(1.01);
+  transition: .3s ease-in-out;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.card img{
+  border-radius: 10px;
+}
+
+.text-center h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  word-spacing:20px;
+}
+
+
+.contact-num img{
+  padding-top: .2rem;
+  width: 3rem;
+  height: fit-content;
+  text-align: center;
+}
+
+.contact-num h5 a{
+  color: rgb(97, 211, 82);
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.line{
+  height:2px;
+  width: 100%;
+  background-color: rgb(97, 211, 82);
+}
+
+.google-map{
+  background: whitesmoke;
+  padding-top:20px;
+  padding-bottom:30px;
+}
+
+.google-map-html{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.visit{
+  margin: 3rem;
+}
+.visit h1{
+  font-size: 2rem;
+}
+.wrapper{
+  flex-wrap: wrap;
+}
+
+.customer{
+  min-height: 500px;
+}
+
+/* --------------------keyframes---------------------- */
+
+@keyframes hometext-load{
+  0%{
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes homeimg-load{
+  0%{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
+/* ------------------media query-------------- */
+
+/* $mobile:576px;
+$tablet:768px;
+$laptop:992px;
+$dekstop:1200px; */
+
+@media (max-width :992px ) and (min-width:600px) {
+  
+  /* .home{
+    background-image: url("./media/home/images/image1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: aqua;
+    width: 100%;
+    height: 70%;
+  } */
+
+  .homeimg {
+    /* background-image: none; */
+    height: 400px;
+    width: 400px;
+  }
+
+  .hometext h1{
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+  }
+
+  .btn{
+    font-size: 16px;
+    font-weight: 200;
+    margin: 3px;
+    border: 0px ;
+    padding: 3px 6px;
+  }
+  .mx-2{
+    margin: 3px !important;
+  }
+  .card-body{
+    padding: 3px;
+  }
+  
+}
+
+@media (min-width:300px) and (max-width :700px ) {
+
+  body{
+    margin: 0;
+    padding: 0;
+  }
+
+  .home{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    max-height: 250px;
+  }
+
+  .home::before{
+    background-image: url('/media/home/images/image1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 1; 
+  }
+  
+  .hometext{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 80%;
+  }
+
+  .homeimg {
+    /* background-image: none; */
+    height: 0px;
+    width: 0px;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .hometext h1{
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    margin: 10px;
+  }
+  .heading h1{
+    font-size: 20px;
+  }
+  .heading{
+    padding: 0px !important;
+  }
+  
+}
+
+@media (max-width:320px){
+  .bttns{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width:576px){
+  .visit{
+    margin: .8rem;
+  }
+  .visit h1{
+  font-size: 1.3rem;
+  }
+  .google-map{
+    padding: 10px;
+    padding-bottom: 20px;
+  }
+
+}
+
+</style>
+
+{% endblock css %}
+
+{% block body %}
+
+<div class="home d-flex justify-content-around p-5">
+
+  <div class="hometext d-flex align-items-center revealtop ">
+    <h1>Explore our curated selection <br />and unleash your creativity!</h1>
+  </div>
+  <div class="homeimg d-flex">
+  </div>
+</div>
+
+<!--    -----------------products-------------   -->
+
+<div class="container ">
+
+  <div class="text-center p-4 font-weight-bold heading">
+    <h1>TOP PRODUCTS</h1>
+  </div>
+
+  <div class="d-flex justify-content-around mt-3 reveal wrapper">
+
+    {% for i in producttype %}
+
+      <div class="card my-3 overflow-hidden mx-3 rounded-3 reveal" style="width: 20rem">
+        <img height="200px" width="400px" src="/media/{{i.image}}" class="card-img-top rounded-3" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title text-center">{{i.product_name}}</h5>
+          <!-- <p class="card-text"> {{i.sub_desc}} </p> -->
+          <div class="bttns d-flex justify-content-around">
+            <a id="prodview{{i.product_id}}" href="productview{{i.product_id}}" class="btn btn-primary">VIEW MORE</a>
+            <button class="btn btn-danger" href="/inquiry" data-toggle="modal" data-target="#inquiryModal">INQUIRE NOW</button>
+          </div>
+        </div>
+
+        <div class="line mb-2"></div>
+
+        <div class="justify-content-around d-flex mb-2 contact">
+          <div class="contact-num d-flex ">
+              <img width="40px" height="30px" src="/media/home/images/call-logo-2.png" alt="">
+              <h5><a href="tel:9911897526">9911897526</a></h5>
+          </div>
+          <div class="contact-num d-flex">
+              <img width="40px" height="30px" src="/media/home/images/call-logo-2.png" alt="">
+              <h5><a href="tel:9582343423P{}">9582343423</a><h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+        </div> 
+        <div class="d-flex justify-content-around reveal">
+      {% endif%} -->
+
+    {% endfor %}
+
+  </div>
+</div>
+
+<!--  ------------google maps-----------------  -->
+
+<div class="google-map reveal">
+  <div class="text-center font-weight-bold visit ">
+    <h1>VISIT US</h1>
+  </div>
+
+  <div class="google-map-html align-items-center">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.2784842223277!2d77.0255993754532!3d28.50126797573673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19edefffb9c5%3A0xe8ab971c5099bc44!2sRao%20Builders!5e0!3m2!1sen!2sin!4v1689145940623!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+<!-- ---------------customer reviews-------------------- -->
+
+<!-- <div class="customer">
+  <div class="review">
+
+  </div>
+</div> -->
+
+
+<!-- --------------Inquiry modal Modal----------- -->
+
+<div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="inquiryModal">Inquire now</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/inquiry"> 
+          {% csrf_token %}
+
+          <div class="form-row">
+            <div class="col">
+              <label for="exampleInputname">Full name</label>
+              <input type="text" name="fullname" class="form-control" placeholder="Full name">
+            </div>
+            <div class="col">
+              <label for="exampleInputphone">Phone number</label>
+              <input type="tel" name="phone" class="form-control" placeholder="0123456789">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1" class="mt-3">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">What are you looking for</label>
+            <textarea class="form-control" name="query" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary ">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock body %}
+
+{% block js %}
+
+<script>
+
+
+</script>
+
+{% endblock js %}

@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+<style>
+
+    .container{
+        max-width: 1300px;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin: auto;
+    }
+
+    .row{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: 30px;
+    }
+
+    .acc-page{
+        padding: 100px 0;
+        background: radial-gradient(#fff, #f5c2c2);
+    }
+    
+    .form-container{
+        background: #fff;
+        width: 300px;
+        height: 400px;
+        position: relative;
+        text-align: center;
+        padding: 20px 0;
+        margin: auto;
+        box-shadow:0 0 20px 0px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    
+    .form-container span{
+        font-weight: bold;
+        padding: 0 10px;
+        display: inline-block;
+        cursor: pointer;
+        width: 100px;
+        color: #555;
+    }
+    
+    .form-btn{
+        display: inline-block;
+    }
+    
+    .form-container form{
+        padding: 0 ;
+        max-width: 300px;
+        top: 130px;
+        position: absolute;
+        transition: transform 0.5s;
+    }
+    
+    form input{
+        width: 70%;
+        height: 30px;
+        margin: 10px 0;
+        padding: 0 10px;
+        border: 1px solid #ccc;
+    }
+    
+    form .btn{
+        width: 80%;
+        border: none;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    
+    .form .btn:focus{
+        outline: none;
+    }
+    
+    #loginform{
+        left: -300px;
+    }
+    
+    #regform{
+        left: 0;
+    }
+    
+    form a{
+        font-size: 12px;
+        text-decoration: none;
+    }
+    
+    #indicator{
+        width: 100px;
+        border: none;
+        background: #ff523b;
+        height: 3px;
+        border-radius: 1.5px;
+        margin-top: 8px;
+        transform: translateX(100px);
+        transition: transform 0.5s;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+</style>
+
+{% endblock css %}
+
+{% block accountActive %}active{% endblock accountActive %}
+
+{% block body %}
+
+<div class="acc-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="login()">Login</span>
+                        <span onclick="register()">Register</span>
+                        <hr id="indicator">
+                    </div>
+                    <form id="loginform">
+                        <input type="text" placeholder="Username">
+                        <input type="password" placeholder="Password">
+                        <button type="submit" class="btn">Login</button>
+                        <br>
+                        <a href="">Forgot Password</a>
+                    </form>
+                    <form id="regform">
+                        <input type="text" placeholder="Username">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <button type="submit" class="btn">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
+{% block script %}
+
+var Loginform = document.getElementById("Loginform")
+var regform = document.getElementById("regform")
+var indicator = document.getElementById("indicator")
+
+function register(){
+    regform.style.transform = "translateX(0px)"
+    loginform.style.transform = "translateX(0px)"
+    indicator.style.transform = "translateX(92px)"
+}
+
+function login(){
+    regform.style.transform = "translateX(300px)"
+    loginform.style.transform = "translateX(300px)"
+    indicator.style.transform = "translateX(-8px)"
+}
+
+{% endblock script %}
