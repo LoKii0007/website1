@@ -14,7 +14,8 @@ SECRET_KEY = 'django-insecure-jyg21uib9a*yvvqq@hfgg3$%s+@6q5w)p_@_*zndgn$dh3hzxa
 # DEBUG = False
 DEBUG = True
 
-ALLOWED_HOSTS = ['raobuilders.co.in', '127.0.0.1', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = []
+
 
 # Application definition
 
