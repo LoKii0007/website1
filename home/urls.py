@@ -1,9 +1,18 @@
 from django.contrib import admin
 from django.urls import path
 from home import views
+from django.conf import settings
+from django.urls import re_path
+
+
 admin.site.site_header = "Rao builders"
 admin.site.site_title = "Rao builders"
 admin.site.index_title = "Welcome to Rao builders"  
+
+# if settings.DEBUG:
+#     urlpatterns += [
+#         re_path(r"^static/(?P<path>.*)$", views.serve),
+#     ]
 
 urlpatterns = [
     path("", views.home, name='home'),

@@ -1,19 +1,10 @@
-{% extends 'base.html' %}
 
+{% extends 'base.html' %}
+{% load static %}
 {% block title %}Contact us{% endblock title %}
 
 {% block css %}
-<style>
-
-.contactus{
-    color:white;
-}
-
-body{
-    background:whitesmoke;
-}
-
-</style>
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
 {% endblock css %}
 
 
